@@ -31,10 +31,6 @@ const resolveConcreteType = ({ prefix, suffix, type }) => {
     throw new Error(`invalid modifier character ${invalidChars}`)
   }
 
-  if (type == null) {
-    throw new Error('type cannot be null')
-  }
-
   const wrapInModifier = (modifierType, char) => {
     const ModifierType = modifiers[char]
     return new ModifierType(modifierType)
