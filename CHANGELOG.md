@@ -4,4 +4,8 @@
 
 # 0.1.1
 
-* Loosen peerDependency on `graphql-js` to `^0.6.2`.
+* ~~Loosen peerDependency on `graphql-js` to `^0.6.2`.~~
+
+# 0.1.2
+
+* Loosen peerDependency on `graphql-js` to `>=0.6.2`.

@@ -37,6 +37,6 @@
     "mocha": "^3.0.2"
   },
   "peerDependencies": {
-    "graphql": "^0.6.2"
+    "graphql": ">=0.6.2"
   }
 }
