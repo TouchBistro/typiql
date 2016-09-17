@@ -1,6 +1,6 @@
 # typiql
 
-![Circle CI](https://circleci.com/gh/touchbistro/typiql/tree/master.svg?style=shield)](https://circleci.com/gh/touchbistro/typiql/tree/master)
+[![CircleCI](https://circleci.com/gh/TouchBistro/typiql/tree/master.svg?style=svg)](https://circleci.com/gh/TouchBistro/typiql/tree/master)
 
 **typiql** is a micro-helper for [graphql-js](https://github.com/graphql/graphql-js) that lets you refer to your GraphQL types more succinctly.
 
