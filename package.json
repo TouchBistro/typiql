@@ -7,7 +7,8 @@
     "test": "mocha --full-trace -R nyan --compilers js:babel-core/register test/typiql.test.js",
     "build": "babel src/typiql.js --out-file build/typiql.js",
     "prepublish": "npm build",
-    "lint": "eslint ."
+    "lint": "eslint src/ test/ || true",
+    "lint:failfast": "eslint "
   },
   "repository": {
     "type": "git",

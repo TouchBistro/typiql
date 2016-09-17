@@ -1,5 +1,7 @@
 # typiql
 
+![Circle CI](https://circleci.com/gh/touchbistro/typiql/tree/master.svg?style=shield)](https://circleci.com/gh/touchbistro/typiql/tree/master)
+
 **typiql** is a micro-helper for [graphql-js](https://github.com/graphql/graphql-js) that lets you refer to your GraphQL types more succinctly.
 
 typiql is not for building entire schemas. It's only for use with the `type` property of your GraphQL fields. You still define `GraphQLObjectType` and `GraphQLInputObjectType`s with normal `graphql-js` syntax, but when declaring your fields' types, use `tql` shorthand to refer to scalars, custom objects, and wrapping types.
