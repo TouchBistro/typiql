@@ -6,7 +6,9 @@
   "scripts": {
     "test": "nyc --reporter=html --reporter=lcov --reporter=text npm run test:nocover",
     "test:nocover": "mocha --full-trace -R nyan --compilers js:babel-core/register test/typiql.test.js",
-    "build": "babel src/typiql.js --out-file build/typiql.js",
+    "build": "npm run build && npm run build:flow",
+    "build:lib": "babel src/typiql.js --out-file build/typiql.js",
+    "build:flow": "flow-copy-source -v -i 'test/**' src build",
     "prepublish": "npm build",
     "lint": "eslint src/ test/ || true",
     "lint:failfast": "eslint ",
@@ -42,6 +44,7 @@
     "eslint-plugin-flowtype": "^2.29.2",
     "eslint-plugin-import": "^2.2.0",
     "flow-bin": "^0.37.4",
+    "flow-copy-source": "^1.1.0",
     "graphql": "^0.8.2",
     "istanbul": "^0.4.5",
     "mocha": "^3.0.2",

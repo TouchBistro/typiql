@@ -14,3 +14,7 @@
 
 * Add flowtype annotations.
 * Upgrade dev dependencies.
+
+# 0.2.1
+
+* Use `flow-copy-source` to build a `.js.flow` file in the `build` directory, so npm users can use the flowtypes.
