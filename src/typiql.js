@@ -1,3 +1,5 @@
+// @flow
+
 import {
   GraphQLID,
   GraphQLInt,
@@ -8,7 +10,13 @@ import {
   GraphQLList,
 } from 'graphql'
 
-const scalars = {
+import type { GraphQLType } from 'graphql'
+
+type ScalarTypeMapping = {
+  [key: string]: GraphQLType
+}
+
+const scalars: ScalarTypeMapping = {
   ID: GraphQLID,
   Int: GraphQLInt,
   String: GraphQLString,
@@ -39,7 +47,10 @@ const resolveConcreteType = ({ prefix, suffix, type }) => {
   return suffix.split('').reverse().reduce(wrapInModifier, type)
 }
 
-const typiql = (strings, ...types) => {
+const typiql = (
+  strings: string[],
+  ...types: GraphQLType[]
+): GraphQLType => {
   const isScalar = (types.length === 0 && strings.length === 1)
   const isConcreteType = (types.length === 1 && strings.length === 2)
 

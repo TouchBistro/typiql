@@ -9,7 +9,8 @@
     "build": "babel src/typiql.js --out-file build/typiql.js",
     "prepublish": "npm build",
     "lint": "eslint src/ test/ || true",
-    "lint:failfast": "eslint "
+    "lint:failfast": "eslint ",
+    "flow": "flow"
   },
   "repository": {
     "type": "git",
@@ -21,24 +22,30 @@
   "babel": {
     "presets": [
       "es2015"
+    ],
+    "plugins": [
+      "transform-flow-strip-types"
     ]
   },
   "author": "TouchBistro",
   "license": "MIT",
   "devDependencies": {
     "babel-cli": "^6.14.0",
-    "babel-eslint": "^6.1.2",
+    "babel-eslint": "^7.1.1",
+    "babel-plugin-transform-flow-strip-types": "^6.21.0",
     "babel-preset-es2015": "^6.14.0",
     "babel-register": "^6.14.0",
     "chai": "^3.5.0",
     "eslint": "^3.5.0",
-    "eslint-config-airbnb-base": "^7.1.0",
-    "eslint-plugin-babel": "^3.3.0",
-    "eslint-plugin-import": "^1.15.0",
-    "graphql": "^0.7.0",
+    "eslint-config-airbnb-base": "^11.0.1",
+    "eslint-plugin-babel": "^4.0.0",
+    "eslint-plugin-flowtype": "^2.29.2",
+    "eslint-plugin-import": "^2.2.0",
+    "flow-bin": "^0.37.4",
+    "graphql": "^0.8.2",
     "istanbul": "^0.4.5",
     "mocha": "^3.0.2",
-    "nyc": "^8.3.0"
+    "nyc": "^10.0.0"
   },
   "peerDependencies": {
     "graphql": ">=0.6.2"

@@ -5,3 +5,4 @@ machine:
 test:
   pre:
     - npm run lint:failfast
+    - npm run flow
