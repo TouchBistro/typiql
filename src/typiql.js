@@ -23,7 +23,7 @@ const modifiers = {
 
 const resolveConcreteType = ({ prefix, suffix, type }) => {
   const invalidChars = [
-    prefix.replace(/[\[]/g, ''),
+    prefix.replace(/[[]/g, ''),
     suffix.replace(/[!\]]/g, ''),
   ].join('')
 
@@ -44,13 +44,13 @@ const typiql = (strings, ...types) => {
   const isConcreteType = (types.length === 1 && strings.length === 2)
 
   if (isScalar) {
-    const scalarName = strings[0].replace(/[\[\]!]/g, '')
+    const scalarName = strings[0].replace(/[[\]!]/g, '')
     const scalar = scalars[scalarName]
     if (scalar == null) {
       throw new Error(`unrecognized scalar ${scalarName}`)
     }
     // Call typiql again with the concrete type of the scalar
-    const [prefix, suffix] = strings[0].split(/[^\[\]!]+/g)
+    const [prefix, suffix] = strings[0].split(/[^[\]!]+/g)
     return resolveConcreteType({
       prefix,
       suffix,
