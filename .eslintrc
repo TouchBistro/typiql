@@ -1,6 +1,13 @@
 {
   "parser": "babel-eslint",
-  "extends": "airbnb-base",
+  "plugins": [
+    "babel",
+    "flowtype",
+  ],
+  "extends": [
+    "airbnb-base",
+    "plugin:flowtype/recommended",
+  ],
   "rules": {
     "semi": [2, "never"],
   }
