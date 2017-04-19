@@ -18,3 +18,7 @@
 # 0.2.1
 
 * Use `flow-copy-source` to build a `.js.flow` file in the `build` directory, so npm users can use the flowtypes.
+
+# 0.2.2
+
+* Use `babel-plugin-add-module-exports` for compatibility with CommonJS `require` syntax.
