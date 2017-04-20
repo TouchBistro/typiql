@@ -21,4 +21,10 @@
 
 # 0.2.2
 
-* Use `babel-plugin-add-module-exports` for compatibility with CommonJS `require` syntax.
+* ~~Use `babel-plugin-add-module-exports` for compatibility with CommonJS `require` syntax.~~
+* This version was released by mistake without building.
+
+# 0.2.3
+
+* Use `babel-plugin-add-module-exports` for compatibility with CommonJS `require` syntax
+
