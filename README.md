@@ -60,7 +60,7 @@ const PostType = new GraphQLObjectType({
     id: { type: tql`ID!` },           // => new GraphQLNonNull(GraphQLID)
     title: { type: tql`String!` },    // => new GraphQLNonNull(GraphQLString)
     comments: {
-      type: tql`[${CommentType}!]`,   // => new GraphQLNonNull(new GraphQLList(CommentType))
+      type: tql`[${CommentType}!]`,   // => new GraphQLList(new GraphQLNonNull(CommentType))
       resolve: () => { /* ... */ }
     }
   }
