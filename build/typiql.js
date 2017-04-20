@@ -22,18 +22,14 @@ var modifiers = {
 };
 
 var resolveConcreteType = function resolveConcreteType(_ref) {
-  var prefix = _ref.prefix;
-  var suffix = _ref.suffix;
-  var type = _ref.type;
+  var prefix = _ref.prefix,
+      suffix = _ref.suffix,
+      type = _ref.type;
 
-  var invalidChars = [prefix.replace(/[\[]/g, ''), suffix.replace(/[!\]]/g, '')].join('');
+  var invalidChars = [prefix.replace(/[[]/g, ''), suffix.replace(/[!\]]/g, '')].join('');
 
   if (invalidChars.length > 0) {
     throw new Error('invalid modifier character ' + invalidChars);
-  }
-
-  if (type == null) {
-    throw new Error('type cannot be null');
   }
 
   var wrapInModifier = function wrapInModifier(modifierType, char) {
@@ -49,19 +45,17 @@ var typiql = function typiql(strings) {
   var isConcreteType = (arguments.length <= 1 ? 0 : arguments.length - 1) === 1 && strings.length === 2;
 
   if (isScalar) {
-    var scalarName = strings[0].replace(/[\[\]!]/g, '');
+    var scalarName = strings[0].replace(/[[\]!]/g, '');
     var scalar = scalars[scalarName];
     if (scalar == null) {
       throw new Error('unrecognized scalar ' + scalarName);
     }
     // Call typiql again with the concrete type of the scalar
 
-    var _strings$0$split = strings[0].split(/[^\[\]!]+/g);
-
-    var _strings$0$split2 = _slicedToArray(_strings$0$split, 2);
-
-    var prefix = _strings$0$split2[0];
-    var suffix = _strings$0$split2[1];
+    var _strings$0$split = strings[0].split(/[^[\]!]+/g),
+        _strings$0$split2 = _slicedToArray(_strings$0$split, 2),
+        prefix = _strings$0$split2[0],
+        suffix = _strings$0$split2[1];
 
     return resolveConcreteType({
       prefix: prefix,
@@ -80,3 +74,4 @@ var typiql = function typiql(strings) {
 };
 
 exports.default = typiql;
+module.exports = exports['default'];
