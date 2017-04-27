@@ -68,8 +68,17 @@ describe('typiql', () => {
   })
 
   it('parses multiple modifiers', () => {
-    expectSameTypes(tql`[Int!]!`,
-      new GraphQLNonNull(new GraphQLList(new GraphQLNonNull(GraphQLInt)))
+    expectSameTypes(
+        tql`[Int!]!`,
+        new GraphQLNonNull(new GraphQLList(new GraphQLNonNull(GraphQLInt))),
+    )
+    expectSameTypes(
+        tql`[Int]!`,
+        new GraphQLNonNull(new GraphQLList(GraphQLInt)),
+    )
+    expectSameTypes(
+        tql`[Int!]`,
+        new GraphQLList(new GraphQLNonNull(GraphQLInt)),
     )
   })
 

@@ -44,7 +44,7 @@ const resolveConcreteType = ({ prefix, suffix, type }) => {
     return new ModifierType(modifierType)
   }
 
-  return suffix.split('').reverse().reduce(wrapInModifier, type)
+  return suffix.split('').reduce(wrapInModifier, type)
 }
 
 const typiql = (
