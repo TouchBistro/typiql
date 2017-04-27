@@ -26,5 +26,8 @@
 
 # 0.2.3
 
-* Use `babel-plugin-add-module-exports` for compatibility with CommonJS `require` syntax
+* Use `babel-plugin-add-module-exports` for compatibility with CommonJS `require` syntax (thanks to @VorontsovMaxim for PR)
 
+# 0.3.0
+
+* **[BREAKING]** Fix bug where `[Foo]!` and `[Foo!]` were reversed. (thanks to @VorontsovMaxim for PR)
