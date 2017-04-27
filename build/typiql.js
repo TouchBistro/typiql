@@ -37,7 +37,7 @@ var resolveConcreteType = function resolveConcreteType(_ref) {
     return new ModifierType(modifierType);
   };
 
-  return suffix.split('').reverse().reduce(wrapInModifier, type);
+  return suffix.split('').reduce(wrapInModifier, type);
 };
 
 var typiql = function typiql(strings) {
